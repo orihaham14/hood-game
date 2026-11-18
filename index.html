@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="מצילים את השכונה">
+<meta name="theme-color" content="#17261f">
+<title>מצילים את השכונה</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<!-- מסכי טעינה לאייפד (לרוחב) -->
+<link rel="apple-touch-startup-image" href="icons/splash-2160x1620.png" media="(device-width: 810px) and (device-height: 1080px) and (orientation: landscape)">
+<link rel="apple-touch-startup-image" href="icons/splash-2360x1640.png" media="(device-width: 820px) and (device-height: 1180px) and (orientation: landscape)">
+<link rel="apple-touch-startup-image" href="icons/splash-2388x1668.png" media="(device-width: 834px) and (device-height: 1194px) and (orientation: landscape)">
+<link rel="apple-touch-startup-image" href="icons/splash-2266x1488.png" media="(device-width: 744px) and (device-height: 1133px) and (orientation: landscape)">
+<link rel="apple-touch-startup-image" href="icons/splash-2732x2048.png" media="(device-width: 1024px) and (device-height: 1366px) and (orientation: landscape)">
+<link rel="apple-touch-startup-image" href="icons/splash-2752x2064.png" media="(device-width: 1032px) and (device-height: 1376px) and (orientation: landscape)">
+<link rel="apple-touch-startup-image" href="icons/splash-2420x1668.png" media="(device-width: 834px) and (device-height: 1210px) and (orientation: landscape)">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="boot"><div class="bootbot" data-robot="happy"></div><div class="bootdots"><i></i><i></i><i></i></div></div>
+
+<section id="intro" class="screen center">
+  <div class="introbot" data-robot="sad"></div>
+  <h1 data-t="introTitle"></h1>
+  <p class="lead" data-t="introLead"></p>
+  <button class="big" id="startBtn" data-t="startBtn"></button>
+</section>
+
+<section id="home" class="screen">
+  <header class="topbar"><div class="title" data-t="homeTitle"></div><div id="slots" class="slots"></div><div class="corner-spacer"></div></header>
+  <div id="hoodWrap"><div id="skyClean"></div><svg id="hood" viewBox="-510 -150 1020 670" preserveAspectRatio="xMidYMid meet"></svg><div id="haze"></div><div id="homeBot" data-robot="sad"></div></div>
+  <div class="homehint" data-t="homeHint"></div>
+  <div id="final" class="finalpanel">
+    <div class="finalbot" data-robot="dance"></div>
+    <h1 data-t="finalTitle"></h1>
+    <div class="fcode" id="fcode"></div>
+    <p class="lead flock" data-t="finalLock"></p>
+    <p class="ftime" id="ftime"></p>
+    <div class="tips" id="tips"></div>
+  </div>
+</section>
+
+<section id="game" class="screen">
+  <header class="gbar"><button id="backBtn" class="back" data-t="backToHood"></button><div id="gTitle"></div><div id="gameBot" data-robot="ok"></div><div class="prog"><div id="gProg"></div></div><div id="gTimer"></div></header>
+  <div id="arena" class="arena"></div>
+</section>
+
+
+<div id="how" class="ov"><div class="card">
+  <button class="xbtn" id="howX" aria-label="סגירה">✕</button>
+  <div class="ic" id="howIcon"></div><h2 id="howTitle"></h2>
+  <div class="demo" id="howDemo"></div>
+  <p id="howText"></p>
+  <button class="big" id="howGo" data-t="howGo"></button>
+</div></div>
+
+<div id="winOv" class="ov"><div class="card">
+  <div class="winbot" data-robot="joy"></div><h2 data-t="winTitle"></h2><p id="winFact"></p>
+  <p id="winPos"></p><div class="digit" id="winDigit"></div>
+  <button class="big" id="winGo" data-t="winGo"></button>
+</div></div>
+
+<div id="adminOv" class="ov"><div class="card admin">
+  <h2>מסך מנהל</h2>
+  <button class="danger" id="aReset">🔄 איפוס לקבוצה הבאה</button>
+  <div class="sec">רמת קושי</div>
+  <div class="row3" id="aLevels"></div>
+  <div class="sec">סימון משימה כפתורה (אם משהו נתקע)</div>
+  <div class="row" id="aSkips"></div>
+  <div class="row">
+    <button id="aCode"></button>
+    <button id="aPin">🔑 שינוי קוד מנהל</button>
+    <button id="aSound"></button>
+    <button id="aMusic"></button>
+  </div>
+  <div class="sec">זמני הקבוצות האחרונות</div>
+  <div class="times" id="aTimes"></div>
+  <button id="aClose" class="closeb">סגירה</button>
+</div></div>
+
+<div id="padOv" class="ov"><div class="card pad">
+  <h2 id="padTitle"></h2><div class="disp" id="padDisp"></div>
+  <div class="keys" id="keys"></div>
+</div></div>
+
+<div id="hot"></div>
+
+<script src="config.js"></script>
+<script src="js/core.js"></script>
+<script src="js/sound.js"></script>
+<script src="js/music.js"></script>
+<script src="js/robot.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/demos.js"></script>
+<script src="js/hood.js"></script>
+<script src="js/games/air.js"></script>
+<script src="js/games/trash.js"></script>
+<script src="js/games/power.js"></script>
+<script src="js/games/water.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
