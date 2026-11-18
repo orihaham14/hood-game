@@ -390,3 +390,12 @@ p.lead{font-size:clamp(18px,2.4vw,28px);max-width:820px;line-height:1.5;opacity:
 .tool:active,.back:active,.xbtn:active,.win:active,.spot:active{transform:scale(.93)}
 .tool,.back,.xbtn{transition:transform .08s}
 .bub:active .pul{transform:scale(.9)}
+
+/* מסכים נמוכים (טאבלטים עם פסי אנדרואיד): מסך מנהל קומפקטי */
+@media (max-height:780px){
+  .admin{gap:.8vh;padding:2vh 2.5vw}
+  .admin h2{font-size:26px}
+  .admin button{min-height:46px;padding:.45em .5em;font-size:17px}
+  .admin .sec{margin-top:0;font-size:15px}
+  .times{padding:.4em .8em}
+}
